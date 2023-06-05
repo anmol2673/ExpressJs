@@ -1,0 +1,49 @@
+<html>
+
+<body>
+    <header>
+        <h1>Product Data</h1>
+    </header>
+    <form action="/displayaddform">
+        <button type="submit" id="btn" value="btn">Add New Product</button>
+        <table border="2px">
+            <thead>
+                <tr>
+                    <th>product Id</th>
+                    <th>product Name</th>
+                    <th>product Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0;i<pdata.length;i++){%>
+                    <tr>
+                        <td>
+                            <%=pdata[i].pid%>
+                        </td>
+                        <td>
+                            <%=pdata[i].pname%>
+                        </td>
+                        <td>
+                            <%=pdata[i].price%>
+                        </td>
+                        <td>
+                            <a href="/edit/ <%=pdata[i].pid%>" >edit</a>
+                            <a href="/delete/ <%=pdata[i].pid%>" >delete</a>
+                        </td>
+
+
+                    </tr>
+                    <%}%>
+
+
+
+                        
+            </tbody>
+
+        </table>
+
+    </form>
+</body>
+
+</html>
